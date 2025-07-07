@@ -16,9 +16,10 @@ pub struct KineParameters {
     pub projectile_a: u32,
     pub ejectile_z: u32,
     pub ejectile_a: u32,
-    pub b_field: f64,       //kG
-    pub sps_angle: f64,     //deg
-    pub projectile_ke: f64, //MeV
+    pub b_field: f64,                   //kG
+    pub sps_angle: f64,                 //deg
+    pub projectile_ke: f64,             //MeV
+    pub excitation_energy: Option<f64>, //MeV
 }
 
 impl Default for KineParameters {
@@ -33,6 +34,7 @@ impl Default for KineParameters {
             b_field: 7.9,
             sps_angle: 37.0,
             projectile_ke: 16.0,
+            excitation_energy: None,
         }
     }
 }
@@ -90,13 +92,48 @@ impl KineParameters {
             ui.add(egui::widgets::DragValue::new(&mut self.ejectile_a).speed(1));
             ui.end_row();
 
-            ui.label("Magnetic Field(kG)");
-            ui.add(egui::widgets::DragValue::new(&mut self.b_field).speed(10.0));
-            ui.label("SPS Angle(deg)");
-            ui.add(egui::widgets::DragValue::new(&mut self.sps_angle).speed(1.0));
+            ui.label("Magnetic Field");
+            ui.add(
+                egui::widgets::DragValue::new(&mut self.b_field)
+                    .speed(10.0)
+                    .suffix(" kG"),
+            );
+            ui.label("SPS Angle");
+            ui.add(
+                egui::widgets::DragValue::new(&mut self.sps_angle)
+                    .speed(1.0)
+                    .suffix("°"),
+            );
             ui.end_row();
-            ui.label("Projectile KE(MeV)");
-            ui.add(egui::widgets::DragValue::new(&mut self.projectile_ke).speed(0.01));
+            ui.label("Projectile KE");
+            ui.add(
+                egui::widgets::DragValue::new(&mut self.projectile_ke)
+                    .speed(0.01)
+                    .suffix(" MeV"),
+            );
+            ui.end_row();
+        });
+
+        ui.horizontal(|ui| {
+            let mut enabled = self.excitation_energy.is_some();
+            ui.checkbox(&mut enabled, "Excitation Energy");
+
+            if enabled {
+                if self.excitation_energy.is_none() {
+                    self.excitation_energy = Some(0.0); // or a default value like 0.0
+                }
+                if let Some(ref mut energy) = self.excitation_energy {
+                    ui.add(
+                        egui::widgets::DragValue::new(energy)
+                            .speed(0.001)
+                            .suffix(" MeV")
+                            .range(0.0..=f64::INFINITY),
+                    );
+                }
+            } else {
+                self.excitation_energy = None;
+                ui.label("0.0 MeV");
+            }
         });
     }
 }
@@ -116,7 +153,10 @@ fn calculate_z_offset(params: &KineParameters, nuc_map: &MassMap) -> Option<f64>
     info!("Residual: {:?}", residual);
 
     let angle_rads = params.sps_angle.to_radians();
-    let q_val = target.mass + projectile.mass - ejectile.mass - residual.mass;
+    let q_val = target.mass + projectile.mass
+        - ejectile.mass
+        - residual.mass
+        - params.excitation_energy.unwrap_or(0.0);
     let term1 = (projectile.mass * ejectile.mass * params.projectile_ke).sqrt()
         / (ejectile.mass + residual.mass)
         * angle_rads.cos();

@@ -928,6 +928,12 @@ impl ChannelData {
                     anode_back_time = hit.timestamp;
                 }
 
+                ChannelType::Monitor => {
+                    self.set_value(&ChannelDataField::MonitorEnergy, hit.energy);
+                    self.set_value(&ChannelDataField::MonitorShort, hit.energy_short);
+                    self.set_value(&ChannelDataField::MonitorTime, hit.timestamp);
+                }
+
                 ChannelType::Cebra0 => {
                     self.set_value(&ChannelDataField::Cebra0Energy, hit.energy);
                     self.set_value(&ChannelDataField::Cebra0Short, hit.energy_short);
