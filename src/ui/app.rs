@@ -353,6 +353,30 @@ impl EVBApp {
                 let board = Board::right_strip(id);
                 self.parameters.channel_map_entries.push(board);
             }
+
+            if ui.button("S1 Wedge").clicked() {
+                let id = self.parameters.channel_map_entries.len() as u32;
+                let board = Board::s1wedge(id);
+                self.parameters.channel_map_entries.push(board);
+            }
+
+            if ui.button("S2 Wedge").clicked() {
+                let id = self.parameters.channel_map_entries.len() as u32;
+                let board = Board::s2wedge(id);
+                self.parameters.channel_map_entries.push(board);
+            }
+
+            if ui.button("S1 Ring").clicked() {
+                let id = self.parameters.channel_map_entries.len() as u32;
+                let board = Board::s1ring(id);
+                self.parameters.channel_map_entries.push(board);
+            }
+
+            if ui.button("S2 Ring").clicked() {
+                let id = self.parameters.channel_map_entries.len() as u32;
+                let board = Board::s2ring(id);
+                self.parameters.channel_map_entries.push(board);
+            }
         });
 
         ui.add_space(1.0);

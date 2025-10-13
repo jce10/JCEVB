@@ -251,6 +251,142 @@ pub enum ChannelDataField {
     Strip17Time,
 
     RF,
+
+    MCPEnergy,
+    MCPTime,
+    MCPShort,
+
+    S1Wedge0Energy,
+    S1Wedge1Energy,
+    S1Wedge2Energy,
+    S1Wedge3Energy,
+    S1Wedge4Energy,
+    S1Wedge5Energy,
+    S1Wedge6Energy,
+    S1Wedge7Energy,
+    S1Wedge8Energy,
+    S1Wedge9Energy,
+    S1Wedge10Energy,
+    S1Wedge11Energy,
+    S1Wedge12Energy,
+    S1Wedge13Energy,
+    S1Wedge14Energy,
+    S1Wedge15Energy,
+    S1Wedge0Time,
+    S1Wedge1Time,
+    S1Wedge2Time,
+    S1Wedge3Time,
+    S1Wedge4Time,
+    S1Wedge5Time,
+    S1Wedge6Time,
+    S1Wedge7Time,
+    S1Wedge8Time,
+    S1Wedge9Time,
+    S1Wedge10Time,
+    S1Wedge11Time,
+    S1Wedge12Time,
+    S1Wedge13Time,
+    S1Wedge14Time,
+    S1Wedge15Time,
+
+    S1Ring0Energy,
+    S1Ring1Energy,
+    S1Ring2Energy,
+    S1Ring3Energy,
+    S1Ring4Energy,
+    S1Ring5Energy,
+    S1Ring6Energy,
+    S1Ring7Energy,
+    S1Ring8Energy,
+    S1Ring9Energy,
+    S1Ring10Energy,
+    S1Ring11Energy,
+    S1Ring12Energy,
+    S1Ring13Energy,
+    S1Ring14Energy,
+    S1Ring15Energy,
+    S1Ring0Time,
+    S1Ring1Time,
+    S1Ring2Time,
+    S1Ring3Time,
+    S1Ring4Time,
+    S1Ring5Time,
+    S1Ring6Time,
+    S1Ring7Time,
+    S1Ring8Time,
+    S1Ring9Time,
+    S1Ring10Time,
+    S1Ring11Time,
+    S1Ring12Time,
+    S1Ring13Time,
+    S1Ring14Time,
+    S1Ring15Time,
+
+    S2Wedge0Energy,
+    S2Wedge1Energy,
+    S2Wedge2Energy,
+    S2Wedge3Energy,
+    S2Wedge4Energy,
+    S2Wedge5Energy,
+    S2Wedge6Energy,
+    S2Wedge7Energy,
+    S2Wedge8Energy,
+    S2Wedge9Energy,
+    S2Wedge10Energy,
+    S2Wedge11Energy,
+    S2Wedge12Energy,
+    S2Wedge13Energy,
+    S2Wedge14Energy,
+    S2Wedge15Energy,
+    S2Wedge0Time,
+    S2Wedge1Time,
+    S2Wedge2Time,
+    S2Wedge3Time,
+    S2Wedge4Time,
+    S2Wedge5Time,
+    S2Wedge6Time,
+    S2Wedge7Time,
+    S2Wedge8Time,
+    S2Wedge9Time,
+    S2Wedge10Time,
+    S2Wedge11Time,
+    S2Wedge12Time,
+    S2Wedge13Time,
+    S2Wedge14Time,
+    S2Wedge15Time,
+
+    S2Ring0Energy,
+    S2Ring1Energy,
+    S2Ring2Energy,
+    S2Ring3Energy,
+    S2Ring4Energy,
+    S2Ring5Energy,
+    S2Ring6Energy,
+    S2Ring7Energy,
+    S2Ring8Energy,
+    S2Ring9Energy,
+    S2Ring10Energy,
+    S2Ring11Energy,
+    S2Ring12Energy,
+    S2Ring13Energy,
+    S2Ring14Energy,
+    S2Ring15Energy,
+    S2Ring0Time,
+    S2Ring1Time,
+    S2Ring2Time,
+    S2Ring3Time,
+    S2Ring4Time,
+    S2Ring5Time,
+    S2Ring6Time,
+    S2Ring7Time,
+    S2Ring8Time,
+    S2Ring9Time,
+    S2Ring10Time,
+    S2Ring11Time,
+    S2Ring12Time,
+    S2Ring13Time,
+    S2Ring14Time,
+    S2Ring15Time,
 }
 
 impl ChannelDataField {
@@ -735,6 +871,268 @@ impl ChannelDataField {
                         channel_map.contains_channel_type(ChannelType::Strip17)
                     }
 
+                    ChannelDataField::MCPEnergy
+                    | ChannelDataField::MCPTime
+                    | ChannelDataField::MCPShort => {
+                        channel_map.contains_channel_type(ChannelType::MCP)
+                    }
+
+                    ChannelDataField::S1Wedge0Energy
+                    | ChannelDataField::S1Wedge0Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge0)
+                    }
+                    ChannelDataField::S1Wedge1Energy
+                    | ChannelDataField::S1Wedge1Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge1)
+                    }
+                    ChannelDataField::S1Wedge2Energy
+                    | ChannelDataField::S1Wedge2Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge2)
+                    }
+                    ChannelDataField::S1Wedge3Energy
+                    | ChannelDataField::S1Wedge3Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge3)
+                    }
+                    ChannelDataField::S1Wedge4Energy
+                    | ChannelDataField::S1Wedge4Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge4)
+                    }
+                    ChannelDataField::S1Wedge5Energy
+                    | ChannelDataField::S1Wedge5Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge5)
+                    }
+                    ChannelDataField::S1Wedge6Energy
+                    | ChannelDataField::S1Wedge6Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge6)
+                    }
+                    ChannelDataField::S1Wedge7Energy
+                    | ChannelDataField::S1Wedge7Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge7)
+                    }
+                    ChannelDataField::S1Wedge8Energy
+                    | ChannelDataField::S1Wedge8Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge8)
+                    }
+                    ChannelDataField::S1Wedge9Energy
+                    | ChannelDataField::S1Wedge9Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge9)
+                    }
+                    ChannelDataField::S1Wedge10Energy
+                    | ChannelDataField::S1Wedge10Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge10)
+                    }
+                    ChannelDataField::S1Wedge11Energy
+                    | ChannelDataField::S1Wedge11Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge11)
+                    }
+                    ChannelDataField::S1Wedge12Energy
+                    | ChannelDataField::S1Wedge12Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge12)
+                    }
+                    ChannelDataField::S1Wedge13Energy
+                    | ChannelDataField::S1Wedge13Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge13)
+                    }
+                    ChannelDataField::S1Wedge14Energy
+                    | ChannelDataField::S1Wedge14Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge14)
+                    }
+                    ChannelDataField::S1Wedge15Energy
+                    | ChannelDataField::S1Wedge15Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Wedge15)
+                    }
+                    ChannelDataField::S2Wedge0Energy
+                    | ChannelDataField::S2Wedge0Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge0)
+                    }
+                    ChannelDataField::S2Wedge1Energy
+                    | ChannelDataField::S2Wedge1Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge1)
+                    }
+                    ChannelDataField::S2Wedge2Energy
+                    | ChannelDataField::S2Wedge2Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge2)
+                    }
+                    ChannelDataField::S2Wedge3Energy
+                    | ChannelDataField::S2Wedge3Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge3)
+                    }
+                    ChannelDataField::S2Wedge4Energy
+                    | ChannelDataField::S2Wedge4Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge4)
+                    }
+                    ChannelDataField::S2Wedge5Energy
+                    | ChannelDataField::S2Wedge5Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge5)
+                    }
+                    ChannelDataField::S2Wedge6Energy
+                    | ChannelDataField::S2Wedge6Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge6)
+                    }
+                    ChannelDataField::S2Wedge7Energy
+                    | ChannelDataField::S2Wedge7Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge7)
+                    }
+                    ChannelDataField::S2Wedge8Energy
+                    | ChannelDataField::S2Wedge8Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge8)
+                    }
+                    ChannelDataField::S2Wedge9Energy
+                    | ChannelDataField::S2Wedge9Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge9)
+                    }
+                    ChannelDataField::S2Wedge10Energy
+                    | ChannelDataField::S2Wedge10Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge10)
+                    }
+                    ChannelDataField::S2Wedge11Energy
+                    | ChannelDataField::S2Wedge11Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge11)
+                    }
+                    ChannelDataField::S2Wedge12Energy
+                    | ChannelDataField::S2Wedge12Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge12)
+                    }
+                    ChannelDataField::S2Wedge13Energy
+                    | ChannelDataField::S2Wedge13Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge13)
+                    }
+                    ChannelDataField::S2Wedge14Energy
+                    | ChannelDataField::S2Wedge14Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge14)
+                    }
+                    ChannelDataField::S2Wedge15Energy
+                    | ChannelDataField::S2Wedge15Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Wedge15)
+                    }
+                    ChannelDataField::S1Ring0Energy
+                    | ChannelDataField::S1Ring0Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring0)
+                    }
+                    ChannelDataField::S1Ring1Energy
+                    | ChannelDataField::S1Ring1Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring1)
+                    }
+                    ChannelDataField::S1Ring2Energy
+                    | ChannelDataField::S1Ring2Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring2)
+                    }
+                    ChannelDataField::S1Ring3Energy
+                    | ChannelDataField::S1Ring3Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring3)
+                    }
+                    ChannelDataField::S1Ring4Energy
+                    | ChannelDataField::S1Ring4Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring4)
+                    }
+                    ChannelDataField::S1Ring5Energy
+                    | ChannelDataField::S1Ring5Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring5)
+                    }
+                    ChannelDataField::S1Ring6Energy
+                    | ChannelDataField::S1Ring6Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring6)
+                    }
+                    ChannelDataField::S1Ring7Energy
+                    | ChannelDataField::S1Ring7Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring7)
+                    }
+                    ChannelDataField::S1Ring8Energy
+                    | ChannelDataField::S1Ring8Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring8)
+                    }
+                    ChannelDataField::S1Ring9Energy
+                    | ChannelDataField::S1Ring9Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring9)
+                    }
+                    ChannelDataField::S1Ring10Energy
+                    | ChannelDataField::S1Ring10Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring10)
+                    }
+                    ChannelDataField::S1Ring11Energy
+                    | ChannelDataField::S1Ring11Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring11)
+                    }
+                    ChannelDataField::S1Ring12Energy
+                    | ChannelDataField::S1Ring12Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring12)
+                    }
+                    ChannelDataField::S1Ring13Energy
+                    | ChannelDataField::S1Ring13Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring13)
+                    }
+                    ChannelDataField::S1Ring14Energy
+                    | ChannelDataField::S1Ring14Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring14)
+                    }
+                    ChannelDataField::S1Ring15Energy
+                    | ChannelDataField::S1Ring15Time => {
+                        channel_map.contains_channel_type(ChannelType::S1Ring15)
+                    }
+                    ChannelDataField::S2Ring0Energy
+                    | ChannelDataField::S2Ring0Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring0)
+                    }
+                    ChannelDataField::S2Ring1Energy
+                    | ChannelDataField::S2Ring1Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring1)
+                    }
+                    ChannelDataField::S2Ring2Energy
+                    | ChannelDataField::S2Ring2Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring2)
+                    }
+                    ChannelDataField::S2Ring3Energy
+                    | ChannelDataField::S2Ring3Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring3)
+                    }
+                    ChannelDataField::S2Ring4Energy
+                    | ChannelDataField::S2Ring4Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring4)
+                    }
+                    ChannelDataField::S2Ring5Energy
+                    | ChannelDataField::S2Ring5Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring5)
+                    }
+                    ChannelDataField::S2Ring6Energy
+                    | ChannelDataField::S2Ring6Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring6)
+                    }
+                    ChannelDataField::S2Ring7Energy
+                    | ChannelDataField::S2Ring7Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring7)
+                    }
+                    ChannelDataField::S2Ring8Energy
+                    | ChannelDataField::S2Ring8Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring8)
+                    }
+                    ChannelDataField::S2Ring9Energy
+                    | ChannelDataField::S2Ring9Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring9)
+                    }
+                    ChannelDataField::S2Ring10Energy
+                    | ChannelDataField::S2Ring10Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring10)
+                    }
+                    ChannelDataField::S2Ring11Energy
+                    | ChannelDataField::S2Ring11Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring11)
+                    }
+                    ChannelDataField::S2Ring12Energy
+                    | ChannelDataField::S2Ring12Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring12)
+                    }
+                    ChannelDataField::S2Ring13Energy
+                    | ChannelDataField::S2Ring13Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring13)
+                    }
+                    ChannelDataField::S2Ring14Energy
+                    | ChannelDataField::S2Ring14Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring14)
+                    }
+                    ChannelDataField::S2Ring15Energy
+                    | ChannelDataField::S2Ring15Time => {
+                        channel_map.contains_channel_type(ChannelType::S2Ring15)
+                    }
                 }
             })
             .collect()
@@ -1353,6 +1751,330 @@ impl ChannelData {
 
                 ChannelType::RF => {
                     self.set_value(&ChannelDataField::RF, hit.timestamp);
+                }
+
+                ChannelType::MCP => {
+                    self.set_value(&ChannelDataField::MCPEnergy, hit.energy);
+                    self.set_value(&ChannelDataField::MCPTime, hit.timestamp);
+                    self.set_value(&ChannelDataField::MCPShort, hit.energy_short);
+                }
+
+                ChannelType::S1Ring0 => {
+                    self.set_value(&ChannelDataField::S1Ring0Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring0Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring1 => {
+                    self.set_value(&ChannelDataField::S1Ring1Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring1Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring2 => {
+                    self.set_value(&ChannelDataField::S1Ring2Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring2Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring3 => {
+                    self.set_value(&ChannelDataField::S1Ring3Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring3Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring4 => {
+                    self.set_value(&ChannelDataField::S1Ring4Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring4Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring5 => {
+                    self.set_value(&ChannelDataField::S1Ring5Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring5Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring6 => {
+                    self.set_value(&ChannelDataField::S1Ring6Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring6Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring7 => {
+                    self.set_value(&ChannelDataField::S1Ring7Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring7Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring8 => {
+                    self.set_value(&ChannelDataField::S1Ring8Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring8Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring9 => {
+                    self.set_value(&ChannelDataField::S1Ring9Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring9Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring10 => {
+                    self.set_value(&ChannelDataField::S1Ring10Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring10Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring11 => {
+                    self.set_value(&ChannelDataField::S1Ring11Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring11Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring12 => {
+                    self.set_value(&ChannelDataField::S1Ring12Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring12Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring13 => {
+                    self.set_value(&ChannelDataField::S1Ring13Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring13Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring14 => {
+                    self.set_value(&ChannelDataField::S1Ring14Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring14Time, hit.timestamp);
+                }
+
+                ChannelType::S1Ring15 => {
+                    self.set_value(&ChannelDataField::S1Ring15Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Ring15Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge0 => {
+                    self.set_value(&ChannelDataField::S1Wedge0Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge0Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge1 => {
+                    self.set_value(&ChannelDataField::S1Wedge1Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge1Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge2 => {
+                    self.set_value(&ChannelDataField::S1Wedge2Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge2Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge3 => {
+                    self.set_value(&ChannelDataField::S1Wedge3Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge3Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge4 => {
+                    self.set_value(&ChannelDataField::S1Wedge4Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge4Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge5 => {
+                    self.set_value(&ChannelDataField::S1Wedge5Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge5Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge6 => {
+                    self.set_value(&ChannelDataField::S1Wedge6Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge6Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge7 => {
+                    self.set_value(&ChannelDataField::S1Wedge7Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge7Time, hit.timestamp);
+                }
+                ChannelType::S1Wedge8 => {
+                    self.set_value(&ChannelDataField::S1Wedge8Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge8Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge9 => {
+                    self.set_value(&ChannelDataField::S1Wedge9Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge9Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge10 => {
+                    self.set_value(&ChannelDataField::S1Wedge10Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge10Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge11 => {
+                    self.set_value(&ChannelDataField::S1Wedge11Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge11Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge12 => {
+                    self.set_value(&ChannelDataField::S1Wedge12Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge12Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge13 => {
+                    self.set_value(&ChannelDataField::S1Wedge13Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge13Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge14 => {
+                    self.set_value(&ChannelDataField::S1Wedge14Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge14Time, hit.timestamp);
+                }
+
+                ChannelType::S1Wedge15 => {
+                    self.set_value(&ChannelDataField::S1Wedge15Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S1Wedge15Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring0 => {
+                    self.set_value(&ChannelDataField::S2Ring0Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring0Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring1 => {
+                    self.set_value(&ChannelDataField::S2Ring1Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring1Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring2 => {
+                    self.set_value(&ChannelDataField::S2Ring2Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring2Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring3 => {
+                    self.set_value(&ChannelDataField::S2Ring3Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring3Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring4 => {
+                    self.set_value(&ChannelDataField::S2Ring4Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring4Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring5 => {
+                    self.set_value(&ChannelDataField::S2Ring5Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring5Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring6 => {
+                    self.set_value(&ChannelDataField::S2Ring6Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring6Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring7 => {
+                    self.set_value(&ChannelDataField::S2Ring7Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring7Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring8 => {
+                    self.set_value(&ChannelDataField::S2Ring8Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring8Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring9 => {
+                    self.set_value(&ChannelDataField::S2Ring9Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring9Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring10 => {
+                    self.set_value(&ChannelDataField::S2Ring10Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring10Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring11 => {
+                    self.set_value(&ChannelDataField::S2Ring11Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring11Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring12 => {
+                    self.set_value(&ChannelDataField::S2Ring12Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring12Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring13 => {
+                    self.set_value(&ChannelDataField::S2Ring13Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring13Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring14 => {
+                    self.set_value(&ChannelDataField::S2Ring14Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring14Time, hit.timestamp);
+                }
+
+                ChannelType::S2Ring15 => {
+                    self.set_value(&ChannelDataField::S2Ring15Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Ring15Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge0 => {
+                    self.set_value(&ChannelDataField::S2Wedge0Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge0Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge1 => {
+                    self.set_value(&ChannelDataField::S2Wedge1Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge1Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge2 => {
+                    self.set_value(&ChannelDataField::S2Wedge2Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge2Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge3 => {
+                    self.set_value(&ChannelDataField::S2Wedge3Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge3Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge4 => {
+                    self.set_value(&ChannelDataField::S2Wedge4Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge4Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge5 => {
+                    self.set_value(&ChannelDataField::S2Wedge5Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge5Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge6 => {
+                    self.set_value(&ChannelDataField::S2Wedge6Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge6Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge7 => {
+                    self.set_value(&ChannelDataField::S2Wedge7Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge7Time, hit.timestamp);
+                }
+                ChannelType::S2Wedge8 => {
+                    self.set_value(&ChannelDataField::S2Wedge8Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge8Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge9 => {
+                    self.set_value(&ChannelDataField::S2Wedge9Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge9Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge10 => {
+                    self.set_value(&ChannelDataField::S2Wedge10Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge10Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge11 => {
+                    self.set_value(&ChannelDataField::S2Wedge11Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge11Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge12 => {
+                    self.set_value(&ChannelDataField::S2Wedge12Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge12Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge13 => {
+                    self.set_value(&ChannelDataField::S2Wedge13Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge13Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge14 => {
+                    self.set_value(&ChannelDataField::S2Wedge14Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge14Time, hit.timestamp);
+                }
+
+                ChannelType::S2Wedge15 => {
+                    self.set_value(&ChannelDataField::S2Wedge15Energy, hit.energy);
+                    self.set_value(&ChannelDataField::S2Wedge15Time, hit.timestamp);
                 }
                 _ => continue,
             }
