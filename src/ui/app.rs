@@ -324,59 +324,63 @@ impl EVBApp {
 
             ui.label("Default Boards:");
 
-            if ui.button("SE-SPS").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::sps(id);
-                self.parameters.channel_map_entries.push(board);
-            }
+            ui.vertical(|ui| {
+                ui.horizontal(|ui| {
+                    if ui.small_button("SE-SPS").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::sps(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
 
-            if ui.button("CeBrA").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::cebra(id);
-                self.parameters.channel_map_entries.push(board);
-            }
+                    if ui.small_button("CeBrA").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::cebra(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
+                    if ui.small_button("CATRINA").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::catrina(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
 
-            if ui.button("CATRINA").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::catrina(id);
-                self.parameters.channel_map_entries.push(board);
-            }
+                    if ui.small_button("Left Strip").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::left_strip(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
 
-            if ui.button("Left Strip").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::left_strip(id);
-                self.parameters.channel_map_entries.push(board);
-            }
+                    if ui.small_button("Right Strip").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::right_strip(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
+                });
+                ui.horizontal(|ui| {
+                    if ui.small_button("S1 Wedge").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::s1wedge(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
 
-            if ui.button("Right Strip").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::right_strip(id);
-                self.parameters.channel_map_entries.push(board);
-            }
+                    if ui.small_button("S2 Wedge").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::s2wedge(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
 
-            if ui.button("S1 Wedge").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::s1wedge(id);
-                self.parameters.channel_map_entries.push(board);
-            }
+                    if ui.small_button("S1 Ring").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::s1ring(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
 
-            if ui.button("S2 Wedge").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::s2wedge(id);
-                self.parameters.channel_map_entries.push(board);
-            }
-
-            if ui.button("S1 Ring").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::s1ring(id);
-                self.parameters.channel_map_entries.push(board);
-            }
-
-            if ui.button("S2 Ring").clicked() {
-                let id = self.parameters.channel_map_entries.len() as u32;
-                let board = Board::s2ring(id);
-                self.parameters.channel_map_entries.push(board);
-            }
+                    if ui.small_button("S2 Ring").clicked() {
+                        let id = self.parameters.channel_map_entries.len() as u32;
+                        let board = Board::s2ring(id);
+                        self.parameters.channel_map_entries.push(board);
+                    }
+                });
+            });
         });
 
         ui.add_space(1.0);
